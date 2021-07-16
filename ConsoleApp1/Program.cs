@@ -35,9 +35,9 @@ namespace ConsoleApp1
 				isNotItsClosedScope = true;
 				isHaveClosedScope = false;
 
-				for (int scopeListCounter = 0; scopeListCounter < 6; scopeListCounter += 2)
+				for (int scopesListCounter = 0; scopesListCounter < 6; scopesListCounter += 2)
 				{
-					if (input[i] == openScopesList[scopeListCounter])
+					if (input[i] == openScopesList[scopesListCounter])
 					{
 						k = 1;
 						while (i + k < input.Length)
@@ -57,7 +57,7 @@ namespace ConsoleApp1
 							if (i + k < input.Length && input[i + k] == closeScopesList[closesCounter])
 							{
 								isHaveClosedScope = true;
-								if (openScopesList[scopeListCounter + 1] == closeScopesList[closesCounter + 1])
+								if (openScopesList[scopesListCounter + 1] == closeScopesList[closesCounter + 1])
 								{
 									i++;
 									isNotItsClosedScope = false;
@@ -71,12 +71,12 @@ namespace ConsoleApp1
 						}
 
 						if (isNotItsClosedScope)
-							openedScopesList.Add(openScopesList[scopeListCounter + 1]);
+							openedScopesList.Add(openScopesList[scopesListCounter + 1]);
 					}
 
-					if (isNotItsClosedScope && input[i] == closeScopesList[scopeListCounter])
+					if (isNotItsClosedScope && input[i] == closeScopesList[scopesListCounter])
 					{
-						closedScopesList.Add(closeScopesList[scopeListCounter + 1]);
+						closedScopesList.Add(closeScopesList[scopesListCounter + 1]);
 					}
 				}
 			}
